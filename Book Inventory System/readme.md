@@ -44,16 +44,29 @@ The system enforces strict data integrity during object instantiation:
 
 ---
 
+To fix the **How to Run** section for the **Book Inventory System**, you need to account for the specific folder structure shown in your GitHub repository. Since the files are nested within a folder, the commands should include the directory change and compile all related Java files.
+
+---
+
 ##  🚀 How to Run
 
-1. **Compile the source files**:
+To run the **Book Inventory System**, follow these steps:
+
+1. **Navigate to the project directory**:
 ```bash
-javac *.java
+cd "Book Inventory System"
 
 ```
 
 
-2. **Run the application**:
+2. **Compile the source files**:
+```bash
+javac Book.java ArrayListOfBook.java InvalidPriceException.java InvalidBookGenreException.java
+
+```
+
+
+3. **Run the application**:
 ```bash
 java ArrayListOfBook
 
@@ -62,5 +75,3 @@ java ArrayListOfBook
 
 
 ---
-
-
