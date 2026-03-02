@@ -80,6 +80,3 @@ java VectorOperations
 
 
 
----
-
-Would you like me to create a **README** for the **Menu-driven calculator** shown in your file explorer?
