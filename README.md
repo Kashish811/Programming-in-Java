@@ -1,82 +1,105 @@
-# Programming-in-Java
+# 👔 Employee Management System in Java
 
-This repository contains a collection of Java programs and mini-applications developed as part of a programming lab.  
-Each experiment focuses on strengthening core Java concepts, object-oriented programming, and practical problem-solving skills.
+A simple Object-Oriented Employee Payroll System implemented in Java. This project demonstrates core OOP concepts like inheritance, abstract classes, method overriding, polymorphism, and custom exception handling.
 
-The repository is organized experiment-wise for easy navigation and understanding.
-
----
-
-## 🚀 What This Repository Covers
-
-- Core Java syntax and control structures  
-- Object-Oriented Programming (OOP) concepts  
-- Exception handling and modular programming  
-- Collections framework  
-- File handling and persistence  
-- Database connectivity using JDBC  
-- GUI development using JavaFX  
+📁 Part of the __Programming-in-Java__ repository.
 
 ---
 
-## 🧪 Experiments Included
+## 📌 Features
 
-| Experiment | Description |
-|----------|-------------|
-| 01 | Menu-driven calculator using operators and control structures |
-| 02 | Vehicle management system using classes, objects, and arrays |
-| 03 | Book management system with constructors and exception handling |
-| 04 | 2D/3D vector operations with mathematical functions |
-| 05 | Banking application demonstrating inheritance |
-| 06 | Employee payroll system using different inheritance types |
-| 07 | Student record manager with file-based CRUD operations |
-| 08 | Application demonstrating design patterns using collections |
-| 09 | Database-driven Java application using JDBC |
-| 10 | GUI-based Java application using JavaFX |
-
----
-
-## 📂 Repository Organization
-
-Each experiment is stored in a separate folder containing the relevant Java source files.
-
-
-Each experiment folder contains:
-- Java source files  
-- Well-structured and readable code  
-- Console-based or GUI-based implementations  
+* Define and manage multiple employee types
+* Support for three employee categories:
+  * Full-Time Employee (DEV / HR departments)
+  * Contract Employee (hourly-based)
+  * Manager (with travel & learning allowances)
+* CTC (Cost to Company) calculation per employee type
+* Department-based CTC logic for full-time employees
+* Custom exception handling:
+  * Invalid employee name or ID
+  * Invalid salary/contract values
+* Tabular console output of employee compensation details
 
 ---
 
-## 🛠️ Tools & Technologies
+## 🏗️ Project Structure
 
-- **Programming Language:** Java  
-- **IDE:** IntelliJ IDEA / Eclipse / NetBeans  
-- **Database:** MySQL (for JDBC-based programs)  
-- **GUI Framework:** JavaFX  
-
----
-
-## ▶️ How to Run
-
-1. Open the project in a Java IDE  
-2. Navigate to the required experiment folder  
-3. Compile and run the Java file  
+```
+Employee Management System/
+├── Employee.java
+├── FullTimeEmployee.java
+├── ContractEmployee.java
+├── Manager.java
+├── InvalidEmployeeException.java
+└── Main.java
+```
 
 ---
 
-## 📌 Notes
+## 🧠 Concepts Used
 
-- Programs are written for learning and practice purposes  
-- Code follows basic Java conventions and readability standards  
-- Some experiments may require external setup (Database or JavaFX configuration)  
+* Abstract Classes & Methods (`Employee`)
+* Inheritance (`FullTimeEmployee`, `ContractEmployee` → `Employee`; `Manager` → `FullTimeEmployee`)
+* Method Overriding (`calculateCTC()`, `getType()`, etc.)
+* Polymorphism (Employee array holding different types)
+* Exception Handling (Custom `InvalidEmployeeException` + `IllegalArgumentException`)
+* Encapsulation
 
 ---
 
+## 🧾 Employee Types & CTC Logic
 
-## ⭐ Acknowledgment
+| Type | Code | CTC Formula |
+|---|---|---|
+| Full-Time (DEV) | `FT` | Salary + Bonus |
+| Full-Time (HR) | `FT` | Salary + ₹15,000 |
+| Contract | `CON` | Hours Worked × Rate per Hour |
+| Manager | `MGR` | Salary + Bonus + Travel + Learning Allowance |
 
-This repository serves as a personal Java programming lab portfolio showcasing practical implementation of programming concepts.
+---
 
+## ⚙️ How to Run
 
+1. Clone the main repository:
 
+```
+git clone https://github.com/Kashish811/Programming-in-Java.git
+```
+
+2. Navigate to this project folder:
+
+```
+cd "Programming-in-Java/Employee Payroll System"
+```
+
+3. Compile the code:
+
+```
+javac Main.java
+```
+
+4. Run the program:
+
+```
+java Main
+```
+
+---
+
+## 🚨 Exception Handling
+
+The system handles:
+
+* ❌ Empty or null employee name
+* ❌ Non-positive employee ID
+* ❌ Negative salary, insurance, bonus, or stock values
+* ❌ Negative hours worked or rate per hour (contract employees)
+* ❌ Negative travel or learning allowances (managers)
+
+---
+
+## ⭐ Notes
+
+* This is a console-based academic project
+* Designed for learning concepts in Java
+* Can be extended with a database, GUI, or full HR management features
